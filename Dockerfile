@@ -1,7 +1,18 @@
-FROM ddidier/ndd-docker-sphinx:latest
+FROM bitnami/minideb:stretch
 
-MAINTAINER Helge Sychla helge.sychla@travelping.com
-
-RUN sudo apt-get update -qq && sudo apt-get -y install texlive-latex-base texlive-latex-recommended texlive-font-utils texlive-fonts-extra texlive-fonts-recommended texlive-latex-extra texlive-latex-recommended
-
-CMD bash
+RUN  install_packages \
+        gettext-base \
+        python-pip \
+        python-setuptools \
+        make \
+        git \
+        graphviz \
+        latexmk \
+        plantuml \
+        sphinx-common \
+        texlive-fonts-recommended \
+        texlive-latex-base \
+        texlive-latex-extra \
+        texlive-latex-recommended && \
+     pip install --no-cache-dir \
+        sphinxcontrib-plantuml
