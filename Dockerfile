@@ -9,6 +9,7 @@ RUN  install_packages \
         graphviz \
         latexmk \
         plantuml \
+        texlive-font-utils \
         sphinx-common \
         texlive-fonts-recommended \
         texlive-latex-base \
